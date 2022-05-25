@@ -72,6 +72,15 @@ include_directories(
   ${catkin_INCLUDE_DIRS}
 )
 
+# sync
+add_executable(sync_odom_lidar
+  apps/sync_odom_lidar.cpp
+)
+target_link_libraries(sync_odom_lidar
+  ${catkin_LIBRARIES}
+  ${PCL_LIBRARIES}
+)
+
 # nodelets
 add_library(hdl_localization_nodelet
   src/hdl_localization/pose_estimator.cpp
